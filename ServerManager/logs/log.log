@@ -1,122 +1,44 @@
-2020-05-13 18:01:10.935  INFO 50808 --- [restartedMain] com.example.sens.Application             : Starting Application on DESKTOP-83TLMNF with PID 50808 (started by haipeng in H:\项目例子\springboot-vue-example-master\ServerManager)
-2020-05-13 18:01:10.959  INFO 50808 --- [restartedMain] com.example.sens.Application             : No active profile set, falling back to default profiles: default
-2020-05-13 18:01:11.028  INFO 50808 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@41b6de73: startup date [Wed May 13 18:01:11 CST 2020]; root of context hierarchy
-2020-05-13 18:01:11.829  INFO 50808 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'securityInterceptor' with a different definition: replacing [Generic bean: class [com.example.sens.Interceptor.SecurityInterceptor]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [H:\项目例子\springboot-vue-example-master\ServerManager\target\classes\com\example\sens\Interceptor\SecurityInterceptor.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=mvcConfig; factoryMethodName=securityInterceptor; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/example/sens/config/MvcConfig.class]]
-2020-05-13 18:01:12.900  INFO 50808 --- [restartedMain] org.xnio                                 : XNIO version 3.3.8.Final
-2020-05-13 18:01:12.915  INFO 50808 --- [restartedMain] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
-2020-05-13 18:01:12.950  WARN 50808 --- [restartedMain] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
-2020-05-13 18:01:12.950  WARN 50808 --- [restartedMain] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2020-05-13 18:01:12.976  INFO 50808 --- [restartedMain] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
-2020-05-13 18:01:12.977  INFO 50808 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1949 ms
-2020-05-13 18:01:13.031  INFO 50808 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
-2020-05-13 18:01:13.035  INFO 50808 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet statViewServlet mapped to [/druid/*]
-2020-05-13 18:01:13.037  INFO 50808 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
-2020-05-13 18:01:13.038  INFO 50808 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
-2020-05-13 18:01:13.246  INFO 50808 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
-2020-05-13 18:01:13.442  INFO 50808 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2020-05-13 18:01:15.151  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[],methods=[GET]}" onto public java.lang.String com.example.sens.controller.MainController.index()
-2020-05-13 18:01:15.158  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/message/clear],methods=[POST]}" onto public com.example.sens.utils.Response<java.lang.Boolean> com.example.sens.controller.MessageController.clear(javax.servlet.http.HttpSession)
-2020-05-13 18:01:15.158  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/message/delete],methods=[POST]}" onto public com.example.sens.utils.Response<java.lang.Boolean> com.example.sens.controller.MessageController.delete(java.lang.Long,javax.servlet.http.HttpSession)
-2020-05-13 18:01:15.159  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/message/updateStatus],methods=[POST]}" onto public com.example.sens.utils.Response<java.lang.Boolean> com.example.sens.controller.MessageController.delete(java.lang.Long,java.lang.String,javax.servlet.http.HttpSession)
-2020-05-13 18:01:15.159  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/message/paging],methods=[GET]}" onto public com.example.sens.utils.Response<com.baomidou.mybatisplus.plugins.Page<com.example.sens.entity.Message>> com.example.sens.controller.MessageController.paging(java.lang.Integer,java.lang.Integer,java.lang.String,javax.servlet.http.HttpSession)
-2020-05-13 18:01:15.159  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/message/batchRead],methods=[POST]}" onto public com.example.sens.utils.Response<java.lang.Boolean> com.example.sens.controller.MessageController.batchRead(javax.servlet.http.HttpSession)
-2020-05-13 18:01:15.159  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/message/unread],methods=[GET]}" onto public com.example.sens.utils.Response<java.lang.Integer> com.example.sens.controller.MessageController.getUnReadSize(javax.servlet.http.HttpSession)
-2020-05-13 18:01:15.165  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/server/delete],methods=[POST]}" onto public com.example.sens.utils.Response<java.lang.Boolean> com.example.sens.controller.ServerController.delete(java.lang.Long,javax.servlet.http.HttpSession)
-2020-05-13 18:01:15.166  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/server/batchRemove],methods=[POST]}" onto public com.example.sens.utils.Response<java.lang.Boolean> com.example.sens.controller.ServerController.batchRemove(java.lang.String,javax.servlet.http.HttpSession)
-2020-05-13 18:01:15.167  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/server/paging],methods=[GET]}" onto public com.example.sens.utils.Response<com.baomidou.mybatisplus.plugins.Page<com.example.sens.entity.Server>> com.example.sens.controller.ServerController.paging(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String)
-2020-05-13 18:01:15.168  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/server/apply],methods=[POST]}" onto public com.example.sens.utils.Response com.example.sens.controller.ServerController.applyServer(com.example.sens.entity.Server,javax.servlet.http.HttpSession)
-2020-05-13 18:01:15.170  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/server/release],methods=[POST]}" onto public com.example.sens.utils.Response com.example.sens.controller.ServerController.releaseServer(java.lang.Long)
-2020-05-13 18:01:15.172  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/server/create],methods=[POST]}" onto public com.example.sens.utils.Response com.example.sens.controller.ServerController.createServer(com.example.sens.entity.Server,javax.servlet.http.HttpSession)
-2020-05-13 18:01:15.173  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/current-user],methods=[GET]}" onto public com.example.sens.utils.Response com.example.sens.controller.UserController.login(javax.servlet.http.HttpSession)
-2020-05-13 18:01:15.174  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/login],methods=[POST]}" onto public com.example.sens.utils.Response com.example.sens.controller.UserController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpSession)
-2020-05-13 18:01:15.178  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/logout],methods=[GET]}" onto public com.example.sens.utils.Response com.example.sens.controller.UserController.logout(javax.servlet.http.HttpSession)
-2020-05-13 18:01:15.200  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2020-05-13 18:01:15.202  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2020-05-13 18:01:15.318  INFO 50808 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@41b6de73: startup date [Wed May 13 18:01:11 CST 2020]; root of context hierarchy
-2020-05-13 18:01:15.872  INFO 50808 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-05-13 18:01:15.919  INFO 50808 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-2020-05-13 18:01:15.921  INFO 50808 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
-2020-05-13 18:01:15.921  INFO 50808 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
-2020-05-13 18:01:15.926  INFO 50808 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
-2020-05-13 18:01:15.926  INFO 50808 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
-2020-05-13 18:01:15.937  INFO 50808 --- [restartedMain] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2020-05-13 18:01:16.000  INFO 50808 --- [restartedMain] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 8080 (http) with context path ''
-2020-05-13 18:01:16.004  INFO 50808 --- [restartedMain] com.example.sens.Application             : Started Application in 5.628 seconds (JVM running for 10.177)
-2020-05-13 18:01:23.266  INFO 50808 --- [XNIO-2 task-1] io.undertow.servlet                      : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-05-13 18:01:23.268  INFO 50808 --- [XNIO-2 task-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-2020-05-13 18:01:23.287  INFO 50808 --- [XNIO-2 task-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
-2020-05-13 18:01:23.306  WARN 50808 --- [XNIO-2 task-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
-2020-05-13 18:02:25.902  WARN 50808 --- [XNIO-2 task-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
-2020-05-13 18:02:29.429  WARN 50808 --- [XNIO-2 task-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
-2020-05-13 18:04:12.729  WARN 50808 --- [XNIO-2 task-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
-2020-05-13 18:11:02.417 ERROR 50808 --- [pool-2-thread-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task.
-
-org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
-### Error querying database.  Cause: com.baomidou.mybatisplus.exceptions.MybatisPlusException:  The SQL execution time is too large, please optimize ! 
-### The error may exist in file [H:\项目例子\springboot-vue-example-master\ServerManager\target\classes\mapper\ServerMapper.xml]
-### The error may involve com.example.sens.mapper.ServerMapper.findOuttime
-### The error occurred while handling results
-### SQL: select * from server  where release_time < ? AND server_status = 'used'
-### Cause: com.baomidou.mybatisplus.exceptions.MybatisPlusException:  The SQL execution time is too large, please optimize ! 
-	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77) ~[mybatis-spring-1.3.1.jar:1.3.1]
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446) ~[mybatis-spring-1.3.1.jar:1.3.1]
-	at com.sun.proxy.$Proxy73.selectList(Unknown Source) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) ~[mybatis-spring-1.3.1.jar:1.3.1]
-	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137) ~[mybatis-3.4.5.jar:3.4.5]
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75) ~[mybatis-3.4.5.jar:3.4.5]
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.5.jar:3.4.5]
-	at com.sun.proxy.$Proxy77.findOuttime(Unknown Source) ~[na:na]
-	at com.example.sens.service.impl.ServerServiceImpl.correctServerStatus(ServerServiceImpl.java:72) ~[classes/:na]
-	at com.example.sens.config.ScheduledTasks.autoUpdateServerStatus(ScheduledTasks.java:27) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.0.9.RELEASE.jar:5.0.9.RELEASE]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.0.9.RELEASE.jar:5.0.9.RELEASE]
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93) [spring-context-5.0.9.RELEASE.jar:5.0.9.RELEASE]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:514) [na:na]
-	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) [na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) [na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1135) [na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [na:na]
-	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
-Caused by: org.apache.ibatis.exceptions.PersistenceException: 
-### Error querying database.  Cause: com.baomidou.mybatisplus.exceptions.MybatisPlusException:  The SQL execution time is too large, please optimize ! 
-### The error may exist in file [H:\项目例子\springboot-vue-example-master\ServerManager\target\classes\mapper\ServerMapper.xml]
-### The error may involve com.example.sens.mapper.ServerMapper.findOuttime
-### The error occurred while handling results
-### SQL: select * from server  where release_time < ? AND server_status = 'used'
-### Cause: com.baomidou.mybatisplus.exceptions.MybatisPlusException:  The SQL execution time is too large, please optimize ! 
-	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30) ~[mybatis-3.4.5.jar:3.4.5]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:150) ~[mybatis-3.4.5.jar:3.4.5]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.5.jar:3.4.5]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.1.jar:1.3.1]
-	... 22 common frames omitted
-Caused by: com.baomidou.mybatisplus.exceptions.MybatisPlusException:  The SQL execution time is too large, please optimize ! 
-	at com.baomidou.mybatisplus.plugins.PerformanceInterceptor.intercept(PerformanceInterceptor.java:171) ~[mybatis-plus-core-2.1.8.jar:na]
-	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.4.5.jar:3.4.5]
-	at com.sun.proxy.$Proxy96.query(Unknown Source) ~[na:na]
-	at jdk.internal.reflect.GeneratedMethodAccessor43.invoke(Unknown Source) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63) ~[mybatis-3.4.5.jar:3.4.5]
-	at com.sun.proxy.$Proxy96.query(Unknown Source) ~[na:na]
-	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63) ~[mybatis-3.4.5.jar:3.4.5]
-	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324) ~[mybatis-3.4.5.jar:3.4.5]
-	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.4.5.jar:3.4.5]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.4.5.jar:3.4.5]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83) ~[mybatis-3.4.5.jar:3.4.5]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.5.jar:3.4.5]
-	... 28 common frames omitted
-
-2020-05-13 18:41:16.158  INFO 50808 --- [Thread-7] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@41b6de73: startup date [Wed May 13 18:01:11 CST 2020]; root of context hierarchy
-2020-05-13 18:41:16.218  INFO 50808 --- [Thread-7] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
-2020-05-13 18:41:16.218  INFO 50808 --- [Thread-7] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
-2020-05-13 18:41:16.228  INFO 50808 --- [Thread-7] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2020-05-13 18:41:16.238  INFO 50808 --- [Thread-7] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2020-05-16 21:25:22.923  INFO 31444 --- [restartedMain] com.example.sens.Application             : Starting Application on DESKTOP-83TLMNF with PID 31444 (H:\hotel\ServerManager\target\classes started by haipeng in H:\hotel\ServerManager)
+2020-05-16 21:25:22.931  INFO 31444 --- [restartedMain] com.example.sens.Application             : No active profile set, falling back to default profiles: default
+2020-05-16 21:25:22.989  INFO 31444 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1e7ab0f0: startup date [Sat May 16 21:25:22 CST 2020]; root of context hierarchy
+2020-05-16 21:25:23.812  INFO 31444 --- [restartedMain] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'securityInterceptor' with a different definition: replacing [Generic bean: class [com.example.sens.Interceptor.SecurityInterceptor]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [H:\hotel\ServerManager\target\classes\com\example\sens\Interceptor\SecurityInterceptor.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=mvcConfig; factoryMethodName=securityInterceptor; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/example/sens/config/MvcConfig.class]]
+2020-05-16 21:25:25.501  INFO 31444 --- [restartedMain] org.xnio                                 : XNIO version 3.3.8.Final
+2020-05-16 21:25:25.527  INFO 31444 --- [restartedMain] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
+2020-05-16 21:25:25.577  WARN 31444 --- [restartedMain] io.undertow.websockets.jsr               : UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2020-05-16 21:25:25.577  WARN 31444 --- [restartedMain] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-05-16 21:25:25.622  INFO 31444 --- [restartedMain] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2020-05-16 21:25:25.623  INFO 31444 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2634 ms
+2020-05-16 21:25:25.684  INFO 31444 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2020-05-16 21:25:25.686  INFO 31444 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet statViewServlet mapped to [/druid/*]
+2020-05-16 21:25:25.686  INFO 31444 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-05-16 21:25:25.686  INFO 31444 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2020-05-16 21:25:25.997  INFO 31444 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-05-16 21:25:26.242  INFO 31444 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-16 21:25:28.342  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[],methods=[GET]}" onto public java.lang.String com.example.sens.controller.MainController.index()
+2020-05-16 21:25:28.347  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/message/clear],methods=[POST]}" onto public com.example.sens.utils.Response<java.lang.Boolean> com.example.sens.controller.MessageController.clear(javax.servlet.http.HttpSession)
+2020-05-16 21:25:28.347  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/message/delete],methods=[POST]}" onto public com.example.sens.utils.Response<java.lang.Boolean> com.example.sens.controller.MessageController.delete(java.lang.Long,javax.servlet.http.HttpSession)
+2020-05-16 21:25:28.347  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/message/updateStatus],methods=[POST]}" onto public com.example.sens.utils.Response<java.lang.Boolean> com.example.sens.controller.MessageController.delete(java.lang.Long,java.lang.String,javax.servlet.http.HttpSession)
+2020-05-16 21:25:28.347  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/message/batchRead],methods=[POST]}" onto public com.example.sens.utils.Response<java.lang.Boolean> com.example.sens.controller.MessageController.batchRead(javax.servlet.http.HttpSession)
+2020-05-16 21:25:28.352  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/message/paging],methods=[GET]}" onto public com.example.sens.utils.Response<com.baomidou.mybatisplus.plugins.Page<com.example.sens.entity.Message>> com.example.sens.controller.MessageController.paging(java.lang.Integer,java.lang.Integer,java.lang.String,javax.servlet.http.HttpSession)
+2020-05-16 21:25:28.352  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/message/unread],methods=[GET]}" onto public com.example.sens.utils.Response<java.lang.Integer> com.example.sens.controller.MessageController.getUnReadSize(javax.servlet.http.HttpSession)
+2020-05-16 21:25:28.357  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/server/delete],methods=[POST]}" onto public com.example.sens.utils.Response<java.lang.Boolean> com.example.sens.controller.ServerController.delete(java.lang.Long,javax.servlet.http.HttpSession)
+2020-05-16 21:25:28.357  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/server/batchRemove],methods=[POST]}" onto public com.example.sens.utils.Response<java.lang.Boolean> com.example.sens.controller.ServerController.batchRemove(java.lang.String,javax.servlet.http.HttpSession)
+2020-05-16 21:25:28.357  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/server/paging],methods=[GET]}" onto public com.example.sens.utils.Response<com.baomidou.mybatisplus.plugins.Page<com.example.sens.entity.Server>> com.example.sens.controller.ServerController.paging(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String)
+2020-05-16 21:25:28.357  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/server/apply],methods=[POST]}" onto public com.example.sens.utils.Response com.example.sens.controller.ServerController.applyServer(com.example.sens.entity.Server,javax.servlet.http.HttpSession)
+2020-05-16 21:25:28.362  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/server/release],methods=[POST]}" onto public com.example.sens.utils.Response com.example.sens.controller.ServerController.releaseServer(java.lang.Long)
+2020-05-16 21:25:28.362  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/server/create],methods=[POST]}" onto public com.example.sens.utils.Response com.example.sens.controller.ServerController.createServer(com.example.sens.entity.Server,javax.servlet.http.HttpSession)
+2020-05-16 21:25:28.367  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/current-user],methods=[GET]}" onto public com.example.sens.utils.Response com.example.sens.controller.UserController.login(javax.servlet.http.HttpSession)
+2020-05-16 21:25:28.367  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/login],methods=[POST]}" onto public com.example.sens.utils.Response com.example.sens.controller.UserController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpSession)
+2020-05-16 21:25:28.367  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/logout],methods=[GET]}" onto public com.example.sens.utils.Response com.example.sens.controller.UserController.logout(javax.servlet.http.HttpSession)
+2020-05-16 21:25:28.372  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-05-16 21:25:28.372  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-05-16 21:25:28.442  INFO 31444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1e7ab0f0: startup date [Sat May 16 21:25:22 CST 2020]; root of context hierarchy
+2020-05-16 21:25:28.920  INFO 31444 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-16 21:25:28.982  INFO 31444 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2020-05-16 21:25:28.982  INFO 31444 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2020-05-16 21:25:28.982  INFO 31444 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-05-16 21:25:28.991  INFO 31444 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2020-05-16 21:25:28.992  INFO 31444 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2020-05-16 21:25:28.992  INFO 31444 --- [restartedMain] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2020-05-16 21:25:29.059  INFO 31444 --- [restartedMain] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 8080 (http) with context path ''
+2020-05-16 21:25:29.063  INFO 31444 --- [restartedMain] com.example.sens.Application             : Started Application in 6.67 seconds (JVM running for 12.368)
